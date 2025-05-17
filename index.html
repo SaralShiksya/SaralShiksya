@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARAL SHIKSHYA - Premier Bridge Courses in Kathmandu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #facc15;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1523050854058-8df9012c9eee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        
+        .course-card:hover .course-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .course-overlay {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="h-10 w-10 rounded-full bg-blue-900 flex items-center justify-center text-yellow-400 font-bold text-xl">SS</div>
+                        <span class="ml-3 text-xl font-bold text-blue-900">SARAL SHIKSHYA</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-blue-900 hover:text-yellow-500 px-3 py-2 font-medium">Home</a>
+                    <a href="#about" class="text-blue-900 hover:text-yellow-500 px-3 py-2 font-medium">About</a>
+                    <a href="#courses" class="text-blue-900 hover:text-yellow-500 px-3 py-2 font-medium">Courses</a>
+                    <a href="#notices" class="text-blue-900 hover:text-yellow-500 px-3 py-2 font-medium">Notices</a>
+                    <a href="#gallery" class="text-blue-900 hover:text-yellow-500 px-3 py-2 font-medium">Gallery</a>
+                    <a href="#contact" class="text-blue-900 hover:text-yellow-500 px-3 py-2 font-medium">Contact</a>
+                    <a href="#" class="bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded-full font-medium transition-all">Login</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="text-blue-900">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg pt-24 pb-32 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center justify-between">
+                <div class="md:w-1/2 animate-fadeIn">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Start Your Future Strong</h1>
+                    <p class="text-xl mb-8">Premier bridge courses for SEE graduates in Kathmandu. Get prepared for top colleges and career paths.</p>
+                    <div class="flex space-x-4">
+                        <a href="#courses" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-8 py-3 rounded-full font-bold transition-all">View Courses</a>
+                        <a href="#contact" class="border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-full font-bold transition-all">Apply Now</a>
+                    </div>
+                </div>
+                <div class="hidden md:block md:w-1/2 animate-fadeIn delay-100">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Students learning" class="rounded-xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fadeIn">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Why Choose SARAL SHIKSHYA?</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl text-center transition-all card-hover animate-fadeIn delay-100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chalkboard-teacher text-blue-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Expert Faculty</h3>
+                    <p class="text-gray-600">Learn from experienced teachers with proven track records in entrance preparation.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl text-center transition-all card-hover animate-fadeIn delay-200">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-blue-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Central Location</h3>
+                    <p class="text-gray-600">Conveniently located in Bagbazar, easily accessible from all parts of Kathmandu.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl text-center transition-all card-hover animate-fadeIn delay-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-trophy text-blue-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">High Success Rate</h3>
+                    <p class="text-gray-600">Our students consistently achieve top ranks in competitive entrance exams.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl text-center transition-all card-hover animate-fadeIn">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clipboard-check text-blue-900 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Daily Mock Tests</h3>
+                    <p class="text-gray-600">Regular assessments to track progress and improve exam performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section id="courses" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Featured Bridge Courses</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md transition-all course-card">
+                    <div class="h-48 bg-blue-900 relative">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df9012c9eee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="St. Xavier's Prep" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-blue-900 bg-opacity-70 flex items-center justify-center course-overlay">
+                            <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-6 py-2 rounded-full font-bold">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">St. Xavier's Entrance Prep</h3>
+                        <p class="text-gray-600 mb-4">Comprehensive preparation for one of Nepal's most competitive college entrance exams.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fas fa-clock mr-1"></i> 3 Months</span>
+                            <span class="text-sm font-bold text-blue-900">Starting Soon</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md transition-all course-card">
+                    <div class="h-48 bg-blue-900 relative">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df9012c9eee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Budhanilkantha Prep" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-blue-900 bg-opacity-70 flex items-center justify-center course-overlay">
+                            <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-6 py-2 rounded-full font-bold">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Budhanilkantha / SOS / Rato Bangala</h3>
+                        <p class="text-gray-600 mb-4">Specialized training for prestigious boarding school entrance examinations.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fas fa-clock mr-1"></i> 2.5 Months</span>
+                            <span class="text-sm font-bold text-blue-900">Enrolling Now</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md transition-all course-card">
+                    <div class="h-48 bg-blue-900 relative">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df9012c9eee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="A-Level Bridge" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-blue-900 bg-opacity-70 flex items-center justify-center course-overlay">
+                            <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-6 py-2 rounded-full font-bold">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">A-Level Bridge Course</h3>
+                        <p class="text-gray-600 mb-4">Smooth transition from SEE to Cambridge A-Level curriculum with strong foundation.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fas fa-clock mr-1"></i> 4 Months</span>
+                            <span class="text-sm font-bold text-blue-900">New Batch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-blue-900 hover:bg-blue-800 text-white px-8 py-3 rounded-full font-bold transition-all">View All Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Success Stories</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl testimonial-card transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-900 font-bold mr-4">AS</div>
+                        <div>
+                            <h4 class="font-bold text-blue-900">Anisha Shrestha</h4>
+                            <p class="text-sm text-gray-500">St. Xavier's College</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The comprehensive mock tests and expert guidance at SARAL SHIKSHYA helped me secure 3rd position in St. Xavier's entrance exam. The faculty's dedication is unmatched!"</p>
+                    <div class="mt-4 text-yellow-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl testimonial-card transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-900 font-bold mr-4">RP</div>
+                        <div>
+                            <h4 class="font-bold text-blue-900">Rohan Poudel</h4>
+                            <p class="text-sm text-gray-500">Budhanilkantha School</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"I was struggling with science concepts after SEE. The bridge course at SARAL SHIKSHYA built my confidence and I cleared Budhanilkantha's entrance in first attempt!"</p>
+                    <div class="mt-4 text-yellow-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl testimonial-card transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-900 font-bold mr-4">SM</div>
+                        <div>
+                            <h4 class="font-bold text-blue-900">Sita Maharjan</h4>
+                            <p class="text-sm text-gray-500">A-Level Student</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The transition from Nepali medium to English A-Levels was challenging, but the bridge course made it smooth. Now I'm excelling in my Cambridge studies thanks to SARAL SHIKSHYA."</p>
+                    <div class="mt-4 text-yellow-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Notices -->
+    <section id="notices" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Latest Notices</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <!-- Notice 1 -->
+                <div class="p-6 border-b border-gray-100 hover:bg-blue-50 transition-all">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 text-blue-900 rounded-lg p-3 mr-4">
+                            <i class="fas fa-bell text-lg"></i>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-bold text-blue-900">New Batch Starting for A-Level Bridge Course</h3>
+                                <span class="text-sm text-gray-500">June 15, 2023</span>
+                            </div>
+                            <p class="text-gray-600">Registration open for July batch of A-Level bridge course. Limited seats available.</p>
+                            <a href="#" class="text-blue-900 hover:text-yellow-500 text-sm font-medium mt-2 inline-block">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Notice 2 -->
+                <div class="p-6 border-b border-gray-100 hover:bg-blue-50 transition-all">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 text-blue-900 rounded-lg p-3 mr-4">
+                            <i class="fas fa-calendar-alt text-lg"></i>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-bold text-blue-900">Mock Test Schedule for St. Xavier's Aspirants</h3>
+                                <span class="text-sm text-gray-500">June 10, 2023</span>
+                            </div>
+                            <p class="text-gray-600">Weekly mock tests will be conducted every Saturday starting June 20.</p>
+                            <a href="#" class="text-blue-900 hover:text-yellow-500 text-sm font-medium mt-2 inline-block">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Notice 3 -->
+                <div class="p-6 hover:bg-blue-50 transition-all">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 text-blue-900 rounded-lg p-3 mr-4">
+                            <i class="fas fa-trophy text-lg"></i>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-bold text-blue-900">Our Students Secure Top Positions in Entrance Exams</h3>
+                                <span class="text-sm text-gray-500">June 5, 2023</span>
+                            </div>
+                            <p class="text-gray-600">Congratulations to our students for outstanding results in various college entrance exams.</p>
+                            <a href="#" class="text-blue-900 hover:text-yellow-500 text-sm font-medium mt-2 inline-block">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="#" class="inline-block border-2 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white px-8 py-2 rounded-full font-bold transition-all">View All Notices</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Start Your Journey?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Join hundreds of successful students who transformed their future with our bridge courses.</p>
+            <a href="#contact" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-8 py-3 rounded-full font-bold transition-all">Enroll Today</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Our Classroom" class="rounded-xl shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">About SARAL SHIKSHYA</h2>
+                    <p class="text-gray-600 mb-4">Established in 2015, SARAL SHIKSHYA has been a pioneer in providing quality bridge courses for SEE graduates in Kathmandu. Our mission is to make quality education accessible and help students achieve their academic dreams.</p>
+                    <p class="text-gray-600 mb-6">With a team of dedicated educators and a proven curriculum, we've helped hundreds of students secure admissions in prestigious institutions like St. Xavier's, Budhanilkantha, SOS, Rato Bangala, and international A-Level programs.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 mr-3">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900">500+</h4>
+                                <p class="text-sm text-gray-600">Students Trained</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 mr-3">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900">15+</h4>
+                                <p class="text-sm text-gray-600">Expert Faculty</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 mr-3">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900">8</h4>
+                                <p class="text-sm text-gray-600">Years Experience</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 mr-3">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900">95%</h4>
+                                <p class="text-sm text-gray-600">Success Rate</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="inline-block bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded-full font-bold transition-all">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Gallery</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df9012c9eee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Classroom" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold">Classroom Sessions</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df9012c9eee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mock Test" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold">Mock Tests</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df9012c9eee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Event" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold">Annual Events</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df9012c9eee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Faculty" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold">Our Faculty</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df9012c9eee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Success" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold">Success Stories</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df9012c9eee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Facility" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white font-bold">Our Facilities</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white px-8 py-2 rounded-full font-bold transition-all">View Full Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Contact Us</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            
+            <div class="md:flex">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Get in Touch</h3>
+                    <p class="text-gray-600 mb-6">Have questions about our courses or admission process? Reach out to us and our team will get back to you promptly.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900">Address</h4>
+                                <p class="text-gray-600">Bagbazar, Kathmandu, Nepal</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900">Phone</h4>
+                                <p class="text-gray-600">015916294 | 9851344694 | 9851344695</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900">Email</h4>
+                                <p class="text-gray-600">info@saralshikshya.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 mr-4">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-900">Opening Hours</h4>
+                                <p class="text-gray-600">Sunday-Friday: 7:00 AM - 5:00 PM</p>
+                                <p class="text-gray-600">Saturday: 9:00 AM - 3:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold text-blue-900 mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 hover:bg-blue-900 hover:text-white transition-all">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 hover:bg-blue-900 hover:text-white transition-all">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 hover:bg-blue-900 hover:text-white transition-all">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-900 hover:bg-blue-900 hover:text-white transition-all">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md">
+                        <h3 class="text-xl font-bold text-blue-900 mb-6">Send Us a Message</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="course" class="block text-gray-700 font-medium mb-2">Course Interested In</label>
+                                <select id="course" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent">
+                                    <option value="">Select a course</option>
+                                    <option value="stx">St. Xavier's Entrance Prep</option>
+                                    <option value="bnk">Budhanilkantha/SOS/Rato Bangala</option>
+                                    <option value="alevel">A-Level Bridge Course</option>
+                                    <option value="science">Advanced Science</option>
+                                    <option value="management">Advanced Management</option>
+                                    <option value="nursing">Staff Nurse/HA/Overseer</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white py-3 rounded-full font-bold transition-all">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="h-96 w-full">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.104717020938!2d85.31216031506206!3d27.71251438279161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19a0a79b5f3d%3A0x1f1e9fc1cfab6e9a!2sBagbazar%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1686123456789!5m2!1sen!2snp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">SARAL SHIKSHYA</h3>
+                    <p class="mb-4">Premier bridge course institute in Kathmandu helping SEE graduates achieve academic excellence.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 bg-blue-800 rounded-full flex items-center justify-center hover:bg-yellow-500 hover:text-blue-900 transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-blue-800 rounded-full flex items-center justify-center hover:bg-yellow-500 hover:text-blue-900 transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-blue-800 rounded-full flex items-center justify-center hover:bg-yellow-500 hover:text-blue-900 transition-all">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-yellow-500 transition-all">Home</a></li>
+                        <li><a href="#about" class="hover:text-yellow-500 transition-all">About Us</a></li>
+                        <li><a href="#courses" class="hover:text-yellow-500 transition-all">Courses</a></li>
+                        <li><a href="#notices" class="hover:text-yellow-500 transition-all">Notices</a></li>
+                        <li><a href="#gallery" class="hover:text-yellow-500 transition-all">Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-yellow-500 transition-all">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Our Courses</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-yellow-500 transition-all">St. Xavier's Prep</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition-all">Budhanilkantha/SOS</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition-all">A-Level Bridge</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition-all">Advanced Science</a></li>
+                        <li><a href="#" class="hover:text-yellow-500 transition-all">Staff Nurse Prep</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Newsletter</h3>
+                    <p class="mb-4">Subscribe to get updates on new courses, notices and events.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg w-full text-gray-900 focus:outline-none">
+                        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-4 rounded-r-lg font-bold">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-800 mt-12 pt-8 text-center">
+                <p>&copy; 2023 SARAL SHIKSHYA. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-900 text-white rounded-full shadow-lg hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Mobile Menu Toggle (would need actual implementation)
+        // Form submission handling (would need actual implementation)
+    </script>
+</body>
+</html>
